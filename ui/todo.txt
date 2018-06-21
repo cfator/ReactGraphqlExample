@@ -1,5 +1,7 @@
+- make hotel a first class data object
+- load hotel list at ui bootstrap time
+- add hotel location and add map on detail and create views
 - install and use foundation to restructure/restyle
-- add location and map
 - hook in react error boundries
 - use apollo high order QUERY and MUTATION components
 - form validation
