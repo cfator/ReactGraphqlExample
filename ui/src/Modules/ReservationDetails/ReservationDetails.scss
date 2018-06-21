@@ -1,0 +1,47 @@
+.reservation-details {
+  width: 80%;
+  margin: auto;
+
+  .save-message {
+    margin: 140px 0 60px;;
+  }
+
+  // some inspiration from https://foundation.zurb.com/building-blocks/blocks/form-icons.html
+  .input-group {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+  .input-group-label {
+    width: 80px;
+    height: 24px;
+    padding: 0 16px;
+    margin-right: 10px;
+    border: 1px solid #cacaca;
+    background: #e6e6e6;
+    color: #0a0a0a;
+    text-align: center;
+    white-space: nowrap;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  //
+
+  .value, .datetime-display, .form-control {
+    line-height: 24px;
+    padding: 0;
+    border-width: 1px;
+  }
+}

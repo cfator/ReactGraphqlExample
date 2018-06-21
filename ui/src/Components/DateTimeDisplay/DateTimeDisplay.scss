@@ -1,0 +1,13 @@
+.datetime-display {
+    display: flex;
+    justify-content: space-between;
+    width: 160px;
+
+  .time {
+    width: 44%;
+  }
+
+  .date {
+    width: 50%;
+  }
+}

@@ -1,0 +1,114 @@
+/* derived from https://foundation.zurb.com/building-blocks/blocks/responsive-card-table.html */
+.responsive-card-table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 80%;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.responsive-card-table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.responsive-card-table th {
+    background-color: #e6e6e6;
+}
+
+.responsive-card-table tr,
+.responsive-card-table th,
+.responsive-card-table td {
+    border: 1px solid #aaa;
+}
+
+.responsive-card-table td {
+    text-align: left;
+}
+
+.edit {
+    height: 24px;
+}
+
+@media screen and (min-width: 901px) {
+    .responsive-card-table tr,
+    .responsive-card-table th,
+    .responsive-card-table td {
+        padding: 4px 6px 3px 6px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .responsive-card-table {
+        width: 600px;
+
+        font-size: 14px;
+    }
+    .responsive-card-table thead tr {
+        position: absolute;
+        top: -9999em;
+        left: -9999em;
+    }
+    .responsive-card-table tr {
+        border: 1px solid #aaa;
+        display: block;
+    }
+    .responsive-card-table tr + tr {
+        margin-top: 1rem;
+    }
+    .responsive-card-table td {
+        border: none;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        border-bottom: 1px solid #aaa;
+        padding-left: 50%;
+        position: relative;
+    }
+    .responsive-card-table td:before {
+        content: attr(data-label);
+        display: inline-block;
+        font-weight: bold;
+        line-height: 1.5;
+        margin-left: -90%;
+        width: 50%;
+        position: relative;
+        z-index: 1;
+    }
+    .responsive-card-table td:after {
+        content: '';
+        position: absolute;
+        background: #e6e6e6;
+        width: 22%;
+        height: 95%;
+        left: 1px;
+        top: 1px;
+        z-index: 0;
+        border-right: 1px solid #aaa;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .responsive-card-table {
+        width: 400px;
+
+        -webkit-transition: width .25s;
+        -moz-transition: width .25s;
+        -ms-transition: width .25s;
+        -o-transition: width .25s;
+        transition: width .25s;
+    }
+    .responsive-card-table td {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+    }
+}

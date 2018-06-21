@@ -1,0 +1,158 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* end reset */
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+a {
+  color: #0a68b4;
+}
+
+a:visited {
+  color: #222222;
+}
+
+select {
+  border-radius: 0;
+}
+
+.app {
+  text-align: center;
+}
+
+.app-main {
+  margin-top: 80px;
+}
+
+.app-header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+
+  background-color: #222;
+  height: 60px;
+  padding: 0 10px;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+
+  -webkit-transition: height .25s;
+  -moz-transition: height .25s;
+  -ms-transition: height .25s;
+  -o-transition: height .25s;
+  transition: height .25s;
+
+  .app-title {
+    font-size: 24px;
+    width: 80%;
+    margin-top: 18px;
+
+    -webkit-transition: font-size .25s;
+    -moz-transition: font-size .25s;
+    -ms-transition: font-size .25s;
+    -o-transition: font-size .25s;
+    transition: font-size .25s;
+  }
+
+  .app-logo {
+    width: 44px;
+    height: 33px;
+    padding: 14px;
+    margin-right: 4px;
+
+    -webkit-transition: height .25s;
+    -moz-transition: height .25s;
+    -ms-transition: height .25s;
+    -o-transition: height .25s;
+    transition: height .25s;
+  }
+}
+
+.create-reservation-icon {
+  padding-top: 10px;
+  width: 40px;
+  height: 40px;
+
+  -webkit-transition: height .25s;
+  -moz-transition: height .25s;
+  -ms-transition: height .25s;
+  -o-transition: height .25s;
+  transition: height .25s;
+}
+
+@media screen and (max-width: 640px) {
+  .app-main {
+    margin-top: 60px;
+  }
+  .app-header {
+    height: 20px;
+    padding: 2px 20px 20px;
+  }
+  .app-title {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+  .app-logo {
+    width: 22px;
+    height: 16px;
+    padding: 12px 4px;
+    margin-right: 2px;
+  }
+  .create-reservation-icon {
+    padding-top: 9px;
+    width: 24px;
+    height: 24px;
+  }
+}
