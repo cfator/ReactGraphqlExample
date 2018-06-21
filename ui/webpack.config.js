@@ -5,7 +5,7 @@ module.exports = {
   entry: [
     'react-hot-loader/patch',
     './src/index.js',
-    './node_modules/fontawesome/index.js' // not yet working
+    // './node_modules/fontawesome/index.js' // not yet working
   ],
   module: {
     rules: [

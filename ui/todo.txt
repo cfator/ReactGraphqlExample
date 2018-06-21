@@ -1,0 +1,10 @@
+- install and use foundation to restructure/restyle
+- add location and map
+- hook in react error boundries
+- use apollo high order QUERY and MUTATION components
+- form validation
+- loading states
+- bring in redux
+- use flow type checking
+- jest for tests
+- js linting
