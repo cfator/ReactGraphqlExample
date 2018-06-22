@@ -5,6 +5,7 @@ import {inject, observer} from 'mobx-react';
 import React, { Component } from 'react'
 
 import DateTimeDisplay from '@Components/DateTimeDisplay/DateTimeDisplay';
+import Loading from '@Components/Loading/Loading';
 
 import './ReservationList.scss';
 
@@ -19,7 +20,7 @@ class ReservationList extends Component {
 
   render() {
     if (this.props.data.loading) {
-      return <div>Loading</div>
+      return <Loading />
     } else if (this.props.error) {
       return <div>{this.props.error}</div>
     }

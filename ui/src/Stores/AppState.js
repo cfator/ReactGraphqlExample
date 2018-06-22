@@ -1,4 +1,3 @@
-import { browserHistory} from 'react-router';
 import gql from 'graphql-tag';
 import { observable, action } from 'mobx';
 import moment from 'moment';

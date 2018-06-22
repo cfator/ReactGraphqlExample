@@ -1,52 +1,31 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
-import React, { PureComponent } from 'react'
+import { inject, observer } from 'mobx-react';
+import React, { Component } from 'react'
 
-const HotelSelect = class HotelSelect extends PureComponent {
+@inject('store')
+@observer
+
+export default class HotelSelect extends Component {
   constructor(props) {
     super(props);
+
+    // add empty option as default
+    let options = [...this.props.store.hotels];
+    options.unshift('');
+
     this.state = {
-      options: []
+      options: options
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.state.options !== nextProps.data.hotels) {
-      this.addEmptyOption(nextProps.data.hotels);
-    }
-  }
-
-  addEmptyOption(hotels) {
-    // add empty option
-    let options = [...hotels];
-    options.unshift('');
-    this.setState({options: options});
-  }
-
   render() {
-    if (this.props.data.loading) {
-      return <div>Loading</div>
-    } else if (this.props.error) {
-      return <div>{this.props.error}</div>
-    }
-
-    return <select name={this.props.name} onChange={this.props.onChange}>
+    return <select name={this.props.name} onChange={(e) => {
+        this.props.onChange(this.state.options[e.target.selectedIndex]);
+      }}>
       {this.state.options.map((item, index) => {
-        return <option key={index} value={item.name}>{item.name}</option>
+        return <option key={index} value={item.id}>{item.name}</option>
       })}
     </select>
   }
 };
-
-const HOTELS_QUERY = gql`
-  query ItemsQuery {
-    hotels {
-			id
-			name
-			lat
-			long
-    }
-  }
-`;
-
-export default graphql(HOTELS_QUERY)(HotelSelect);

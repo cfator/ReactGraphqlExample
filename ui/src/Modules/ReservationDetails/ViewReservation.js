@@ -1,10 +1,13 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { Link } from 'react-router-dom';
-import {inject, observer} from 'mobx-react';
+import { inject, observer } from 'mobx-react';
+import { Marker } from 'google-maps-react';
 import React, { Component } from 'react'
 
 import DateTimeDisplay from '@Components/DateTimeDisplay/DateTimeDisplay';
+import Loading from '@Components/Loading/Loading';
+import Map from '@Components/Map/Map';
 
 import './ReservationDetails.scss';
 
@@ -19,7 +22,7 @@ class ViewReservation extends Component {
 
   render() {
     if (this.props.data.loading) {
-      return <div>Loading</div>
+      return <Loading />
     } else if (this.props.error) {
       return <div>{this.props.error}</div>
     }
@@ -28,25 +31,35 @@ class ViewReservation extends Component {
 
     // look up hotel details
     const hotel = this.props.store.getHotel(reservation.hotelId);
+    const geoLocation = {lat: hotel.location.lat, lng: hotel.location.long};
 
     return <div className="reservation-details">
-      <div className="input-group">
-        <label className="input-group-label">Guest</label>
-        <div className="value">{reservation.name}</div>
+      <div className="form">
+        <div className="input-group">
+          <label className="input-group-label">Guest</label>
+          <div className="value">{reservation.name}</div>
+        </div>
+        <div className="input-group">
+          <label className="input-group-label">Hotel</label>
+          <div className="value">{hotel.name}</div>
+        </div>
+        <div className="input-group">
+          <label className="input-group-label">Arrival</label>
+          <DateTimeDisplay datetime={reservation.arrivalDate}/>
+        </div>
+        <div className="input-group">
+          <label className="input-group-label">Departure</label>
+          <DateTimeDisplay datetime={reservation.departureDate}/>
+        </div>
+        <Link to='/'>All Reservations</Link>
       </div>
-      <div className="input-group">
-        <label className="input-group-label">Hotel</label>
-        <div className="value">{hotel.name}</div>
+      <div className="map">
+        <Map style={{ width: '400px', height: '400px'}} initialCenter={geoLocation} zoom={10}>
+          <Marker
+            name={hotel.name}
+            position={geoLocation} />
+        </Map>
       </div>
-      <div className="input-group">
-        <label className="input-group-label">Arrival</label>
-        <DateTimeDisplay datetime={reservation.arrivalDate}/>
-      </div>
-      <div className="input-group">
-        <label className="input-group-label">Departure</label>
-        <DateTimeDisplay datetime={reservation.departureDate}/>
-      </div>
-      <Link to='/'>All Reservations</Link>
     </div>
   }
 };

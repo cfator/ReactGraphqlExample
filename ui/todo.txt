@@ -1,12 +1,15 @@
-- make hotel a first class data object
-- load hotel list at ui bootstrap time
-- add hotel location and add map on detail and create views
+x make hotel a first class data object
+x load hotel list at ui bootstrap time
+x add hotel location and add map on detail view
+x add hotel location and add map on create view
+- recenter map on hotel change in create view
 - install and use foundation to restructure/restyle
 - hook in react error boundries
 - use apollo high order QUERY and MUTATION components
 - form validation
-- loading states
-- bring in redux
+x loading states
+- look at redux
 - use flow type checking
 - jest for tests
 - js linting
+- editor config
