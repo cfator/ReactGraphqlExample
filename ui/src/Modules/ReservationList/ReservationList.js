@@ -79,4 +79,4 @@ const RESERVATIONS_QUERY = gql`
   }
 `;
 
-export default graphql(RESERVATIONS_QUERY)(ReservationList);
+export default graphql(RESERVATIONS_QUERY, { options: { fetchPolicy: 'network-only' } })(ReservationList);

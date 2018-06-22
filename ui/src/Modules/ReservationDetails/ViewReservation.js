@@ -51,7 +51,7 @@ class ViewReservation extends Component {
           <label className="input-group-label">Departure</label>
           <DateTimeDisplay datetime={reservation.departureDate}/>
         </div>
-        <Link to='/'>All Reservations</Link>
+        <Link to='/'>Back to All Reservations</Link>
       </div>
       <div className="map">
         <Map style={{ width: '400px', height: '400px'}} initialCenter={geoLocation} zoom={10}>

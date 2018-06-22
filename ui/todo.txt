@@ -2,12 +2,16 @@ x make hotel a first class data object
 x load hotel list at ui bootstrap time
 x add hotel location and add map on detail view
 x add hotel location and add map on create view
+x fix listing view not refreshing after create
+x loading states
+
 - recenter map on hotel change in create view
+- use material ui
+
 - install and use foundation to restructure/restyle
 - hook in react error boundries
-- use apollo high order QUERY and MUTATION components
+- look at apollo high order QUERY and MUTATION components
 - form validation
-x loading states
 - look at redux
 - use flow type checking
 - jest for tests

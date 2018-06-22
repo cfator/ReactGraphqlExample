@@ -50,7 +50,8 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   defaultOptions: {
     query: {
-      cache: new InMemoryCache()
+      fetchPolicy: 'network-only',
+      errorPolicy: 'all'
     }
   }
 });

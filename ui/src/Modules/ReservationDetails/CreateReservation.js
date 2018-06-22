@@ -56,7 +56,7 @@ class CreateReservation extends Component {
       return;
     }
 
-    this.props.createReservation(this.state.name, this.state.hotelName, this.state.arrivalDate, this.state.departureDate)
+    this.props.createReservation(this.state.name, this.state.hotelId, this.state.arrivalDate, this.state.departureDate)
       .then(this.handleSaveSucess)
       .catch(this.handleSaveFailure);
   };
@@ -107,7 +107,7 @@ class CreateReservation extends Component {
             </div>
           </form>
         }
-        <Link to='/'>All Reservations</Link>
+        <Link to='/'>Back to All Reservations</Link>
       </div>
       <div className="map">
         {geoLocation &&
