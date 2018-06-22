@@ -9,7 +9,6 @@ import Listing from '@Modules/ReservationList/ReservationList';
 import View from '@Modules/ReservationDetails/ViewReservation';
 
 import add from '@Images/add.svg';
-import logo from '@Images/logo.svg';
 
 import './Primary.scss';
 
@@ -20,7 +19,6 @@ export default class PrimaryLayout extends PureComponent {
         <div className="primary">
           <div className="app">
             <header className="app-header">
-              <img src={logo} className="app-logo" alt="logo"/>
               <h1 className="app-title">Reservations</h1>
               <Link to='/create'>
                 <img src={add} className="create-reservation-icon" alt="create new reservation"/>
