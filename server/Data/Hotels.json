@@ -4,7 +4,7 @@
     "name": "Hilton Anatole",
     "location": {
       "lat": 32.799964,
-      "long": -96.828223
+      "lng": -96.828223
     }
   },
   {
@@ -12,7 +12,7 @@
     "name": "Hilton Dallas Lincoln Centre",
     "location": {
       "lat": 32.924109,
-      "long": -96.817416
+      "lng": -96.817416
     }
   },
   {
@@ -20,7 +20,7 @@
     "name": "Hilton Dallas/Rockwall Lakefront",
     "location": {
       "lat": 32.888335,
-      "long": -96.480977
+      "lng": -96.480977
     }
   },
   {
@@ -28,7 +28,7 @@
     "name": "Hilton DFW Lakes Executive Conference",
     "location": {
       "lat": 32.959467,
-      "long": -97.046903
+      "lng": -97.046903
     }
   },
   {
@@ -36,7 +36,7 @@
     "name": "Hilton Dallas/Park Cities",
     "location": {
       "lat": 32.863399,
-      "long": -96.809848
+      "lng": -96.809848
     }
   },
   {
@@ -44,7 +44,7 @@
     "name": "Hilton Dallas/Southlake Town Square",
     "location": {
       "lat": 32.945837,
-      "long": -97.130669
+      "lng": -97.130669
     }
   },
   {
@@ -52,7 +52,7 @@
     "name": "Hilton Austin",
     "location": {
       "lat": 30.265449,
-      "long": -97.738661
+      "lng": -97.738661
     }
   },
   {
@@ -60,7 +60,7 @@
     "name": "Hilton Austin Airport",
     "location": {
       "lat": 30.211447,
-      "long": -97.663813
+      "lng": -97.663813
     }
   },
   {
@@ -68,7 +68,7 @@
     "name": "Hilton Palacio del Rio",
     "location": {
       "lat": 29.422398,
-      "long": -98.487785
+      "lng": -98.487785
     }
   },
   {
@@ -76,7 +76,7 @@
     "name": "Hilton San Antonio Hill Country",
     "location": {
       "lat": 29.465228,
-      "long": -98.686723
+      "lng": -98.686723
     }
   },
   {
@@ -84,7 +84,7 @@
     "name": "Hilton San Antonio Airport",
     "location": {
       "lat": 29.521535,
-      "long": -98.502451
+      "lng": -98.502451
     }
   }
 ]

@@ -18,8 +18,7 @@ class CreateReservation extends Component {
       name: '',
       hotelId: '',
       hotelName: '',
-      hotelLat: undefined,
-      hotelLong: undefined,
+      hotelLocation: undefined,
       arrivalDate: undefined,
       departureDate: undefined,
       message: undefined
@@ -33,7 +32,11 @@ class CreateReservation extends Component {
   };
 
   handleHotelChange = (hotel) => {
-    this.setState({ hotelName: hotel.name, hotelId: hotel.id, hotelLat: hotel.location.lat, hotelLong: hotel.location.long});
+    this.setState({
+      hotelName: hotel.name,
+      hotelId: hotel.id,
+      hotelLocation: hotel.location
+    });
   };
 
   handleDateChange = (which, moment) => {
@@ -74,8 +77,6 @@ class CreateReservation extends Component {
       return <div>{this.props.error}</div>
     }
 
-    const geoLocation = (this.state.hotelLat !== undefined) ? {lat: this.state.hotelLat, lng: this.state.hotelLong} : undefined;
-
     return <div className="reservation-details">
       <div className="form">
         {this.state.message !== undefined &&
@@ -110,11 +111,11 @@ class CreateReservation extends Component {
         <Link to='/'>Back to All Reservations</Link>
       </div>
       <div className="map">
-        {geoLocation &&
-          <Map style={{ width: '400px', height: '400px'}} initialCenter={geoLocation} zoom={10}>
+        {this.state.hotelLocation &&
+          <Map style={{ width: '400px', height: '400px'}} initialCenter={this.state.hotelLocation} center={this.state.hotelLocation} zoom={8}>
             <Marker
               name={this.state.hotelName}
-              position={geoLocation}/>
+              position={this.state.hotelLocation}/>
           </Map>
         }
       </div>

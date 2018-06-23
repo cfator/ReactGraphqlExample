@@ -47,7 +47,7 @@ class AppState {
           name
           location {
             lat
-            long
+            lng
           }
         }
       }
@@ -60,7 +60,7 @@ class AppState {
   }
 
   getHotel(id) {
-    return this.hotels[id];
+    return this.hotels[id-1];
   }
 }
 

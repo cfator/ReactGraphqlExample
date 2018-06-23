@@ -31,7 +31,6 @@ class ViewReservation extends Component {
 
     // look up hotel details
     const hotel = this.props.store.getHotel(reservation.hotelId);
-    const geoLocation = {lat: hotel.location.lat, lng: hotel.location.long};
 
     return <div className="reservation-details">
       <div className="form">
@@ -54,10 +53,10 @@ class ViewReservation extends Component {
         <Link to='/'>Back to All Reservations</Link>
       </div>
       <div className="map">
-        <Map style={{ width: '400px', height: '400px'}} initialCenter={geoLocation} zoom={10}>
+        <Map style={{ width: '400px', height: '400px'}} initialCenter={hotel.location} zoom={8}>
           <Marker
             name={hotel.name}
-            position={geoLocation} />
+            position={hotel.location} />
         </Map>
       </div>
     </div>

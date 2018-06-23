@@ -51,7 +51,7 @@ const typeDefs = `
 
   type Location {
     lat: Float!
-    long: Float!
+    lng: Float!
   }
 
   type Hotel {
