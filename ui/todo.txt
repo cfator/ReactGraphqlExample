@@ -12,6 +12,9 @@ x loading states
 - hook in react error boundries
 - look at apollo high order QUERY and MUTATION components
 - form validation
+- CSP and helmet
+- http headers
+- asset bundling optimizations
 - look at redux
 - use flow type checking
 - jest for tests
