@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Hilton Anatole",
+    "name": "Anatole",
     "location": {
       "lat": 32.799964,
       "lng": -96.828223
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "name": "Hilton Dallas Lincoln Centre",
+    "name": "Dallas Lincoln Centre",
     "location": {
       "lat": 32.924109,
       "lng": -96.817416
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "name": "Hilton Dallas/Rockwall Lakefront",
+    "name": "Dallas/Rockwall Lakefront",
     "location": {
       "lat": 32.888335,
       "lng": -96.480977
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "name": "Hilton DFW Lakes Executive Conference",
+    "name": "DFW Lakes Executive Conference",
     "location": {
       "lat": 32.959467,
       "lng": -97.046903
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "name": "Hilton Dallas/Park Cities",
+    "name": "Dallas/Park Cities",
     "location": {
       "lat": 32.863399,
       "lng": -96.809848
@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "name": "Hilton Dallas/Southlake Town Square",
+    "name": "Dallas/Southlake Town Square",
     "location": {
       "lat": 32.945837,
       "lng": -97.130669
@@ -49,7 +49,7 @@
   },
   {
     "id": 7,
-    "name": "Hilton Austin",
+    "name": "Austin",
     "location": {
       "lat": 30.265449,
       "lng": -97.738661
@@ -57,7 +57,7 @@
   },
   {
     "id": 8,
-    "name": "Hilton Austin Airport",
+    "name": "Austin Airport",
     "location": {
       "lat": 30.211447,
       "lng": -97.663813
@@ -65,7 +65,7 @@
   },
   {
     "id": 9,
-    "name": "Hilton Palacio del Rio",
+    "name": "Palacio del Rio",
     "location": {
       "lat": 29.422398,
       "lng": -98.487785
@@ -73,7 +73,7 @@
   },
   {
     "id": 10,
-    "name": "Hilton San Antonio Hill Country",
+    "name": "San Antonio Hill Country",
     "location": {
       "lat": 29.465228,
       "lng": -98.686723
@@ -81,7 +81,7 @@
   },
   {
     "id": 11,
-    "name": "Hilton San Antonio Airport",
+    "name": "San Antonio Airport",
     "location": {
       "lat": 29.521535,
       "lng": -98.502451
