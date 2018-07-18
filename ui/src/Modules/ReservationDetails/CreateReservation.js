@@ -8,6 +8,8 @@ import React, { Component } from 'react';
 import HotelSelect from '@Components/HotelSelect/HotelSelect';
 import Map from '@Components/Map/Map';
 
+import CreateReservationMutation from './CreateReservationMutation';
+
 import 'react-datetime/css/react-datetime.css';
 import './ReservationDetails.scss';
 
@@ -73,63 +75,62 @@ class CreateReservation extends Component {
   };
 
   render() {
-    if (this.props.error) {
-      return <div>{this.props.error}</div>
-    }
-
-    return <div className="reservation-details">
-      <div className="form">
-        {this.state.message !== undefined &&
-          <div className="save-message">{this.state.message}</div>
-        }
-        {this.state.message === undefined &&
-          <form onSubmit={this.handleSubmit}>
-            <div className="input-group">
-              <label className="input-group-label" htmlFor="name">Guest Name</label>
-              <input type="text" value={this.state.name} onChange={this.handleChange} placeholder="Enter Guest Name"
-                     name="name"/>
+    return (
+      <CreateReservationMutation>
+        {(execute) => {
+          return (<div className="reservation-details">
+            <div className="form">
+              {this.state.message !== undefined &&
+                <div className="save-message">{this.state.message}</div>
+              }
+              {this.state.message === undefined &&
+                <form onSubmit={() => execute(this.state.name, this.state.hotelId, this.state.arrivalDate, this.state.departureDate)}>
+                  <div className="input-group">
+                    <label className="input-group-label" htmlFor="name">Guest Name</label>
+                    <input type="text" value={this.state.name} onChange={this.handleChange} placeholder="Enter Guest Name"
+                           name="name"/>
+                  </div>
+                  <div className="input-group">
+                    <label className="input-group-label" htmlFor="hotelName">Hotel</label>
+                    <HotelSelect name="hotelName" value={this.state.hotelName} onChange={this.handleHotelChange}/>
+                  </div>
+                  <div className="input-group">
+                    <label className="input-group-label">Arrival</label>
+                    <Datetime selected={this.state.arrivalDate} onChange={this.handleDateChange.bind(this, 'arrival')}
+                              closeOnSelect={true}/>
+                  </div>
+                  <div className="input-group">
+                    <label className="input-group-label">Departure</label>
+                    <Datetime selected={this.state.departurelDate} onChange={this.handleDateChange.bind(this, 'departure')}
+                              closeOnSelect={true}/>
+                  </div>
+                  <div className="input-group">
+                    <button type="submit">Submit</button>
+                  </div>
+                </form>
+              }
+              <Link to='/'>Back to All Reservations</Link>
             </div>
-            <div className="input-group">
-              <label className="input-group-label" htmlFor="hotelName">Hotel</label>
-              <HotelSelect name="hotelName" value={this.state.hotelName} onChange={this.handleHotelChange}/>
+            <div className="map">
+              {this.state.hotelLocation &&
+                <Map style={{ width: '400px', height: '400px'}} initialCenter={this.state.hotelLocation} center={this.state.hotelLocation} zoom={8}>
+                  <Marker
+                    name={this.state.hotelName}
+                    position={this.state.hotelLocation}/>
+                </Map>
+              }
             </div>
-            <div className="input-group">
-              <label className="input-group-label">Arrival</label>
-              <Datetime selected={this.state.arrivalDate} onChange={this.handleDateChange.bind(this, 'arrival')}
-                        closeOnSelect={true}/>
-            </div>
-            <div className="input-group">
-              <label className="input-group-label">Departure</label>
-              <Datetime selected={this.state.departurelDate} onChange={this.handleDateChange.bind(this, 'departure')}
-                        closeOnSelect={true}/>
-            </div>
-            <div className="input-group">
-              <button type="submit">Submit</button>
-            </div>
-          </form>
-        }
-        <Link to='/'>Back to All Reservations</Link>
-      </div>
-      <div className="map">
-        {this.state.hotelLocation &&
-          <Map style={{ width: '400px', height: '400px'}} initialCenter={this.state.hotelLocation} center={this.state.hotelLocation} zoom={8}>
-            <Marker
-              name={this.state.hotelName}
-              position={this.state.hotelLocation}/>
-          </Map>
-        }
-      </div>
-    </div>
+          </div>
+          )
+        }}
+      </CreateReservationMutation>
+    )
   }
-};
+}
 
-const RESERVATION_CREATE = gql`
-  mutation ItemCreate($name: String!, $hotelId: ID!, $arrivalDate: String!, $departureDate: String!) {
-    createReservation(name: $name, hotelId: $hotelId, arrivalDate: $arrivalDate, departureDate: $departureDate)
-  }
-`;
+export default CreateReservation;
 
-export default graphql(RESERVATION_CREATE, {
+/*graphql(RESERVATION_CREATE, {
   props: ({ ownProps, mutate }) => ({
     createReservation: (name, hotelId, arrivalDate, departureDate) => {
       let updateData = {
@@ -147,4 +148,4 @@ export default graphql(RESERVATION_CREATE, {
       })
     }
   })
-})(CreateReservation);
+})(CreateReservation);*/
